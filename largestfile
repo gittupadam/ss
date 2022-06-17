@@ -1,0 +1,11 @@
+clear
+if [ $# -ne 1 ]
+then
+echo –e “\n\nInvalid Number of arguments passed\n”
+
+exit
+fi
+cd $1
+echo The directory name is $1
+set -- ` ls -lR| grep -v "^d" |sort +4 -5 -rn`
+echo "size of the largest file is $5 blocks"
